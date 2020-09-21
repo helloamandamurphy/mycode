@@ -1,2 +1,2 @@
 # mycode
-Alta3 Python Code
+Alta3 Python Course Code
