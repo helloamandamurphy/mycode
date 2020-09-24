@@ -29,4 +29,15 @@ def promptUser():
     print("Thanks for your input. Let me think about it.")
     calc(a, b, operator)
 
-promptUser()
+if __name__ == "__main__":
+    promptUser()
+
+
+
+
+
+
+
+
+
+
