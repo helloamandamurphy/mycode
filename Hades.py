@@ -2,6 +2,11 @@
 
 # Text Game by Amanda Murphy
 
+# To do: 
+## Add instructions
+## Add input check
+
+
 import time
 banner = ('''
 
@@ -32,100 +37,150 @@ banner = ('''
                                                                                               
                                                                                               
 ''')
-intro = ('''
-You've finally escaped your mother and her long list of chores.
-You push through the trees, chasing after your friends,
-out into a wide field, blanketing the ground in wild flowers.
-What do you want to do?
-Type `chase your friends` or `slow down`
-''')
+def intro():
+    print('''
+    You've finally escaped your mother and her long list of chores.
+    You push through the trees, chasing after your friends,
+    out into a wide field, blanketing the ground in wild flowers. ''')
+    input()
+    print('''
+        What do you want to do?
+        Type `chase your friends` or `slow down`
+    ''')
 
-chaseFriends = ('''
-Your friends flop into the grass on the far side of the field to pick flowers.
-They start plucking the petals off flowers playing He loves me, He loves me not.
-How many letters are in your crush's name?
-Enter a number between 1-20.
-''')
+def chaseFriends():
+    print('''
+    Your friends flop into the grass on the far side of the field to pick flowers.
+    They start plucking the petals off flowers playing He loves me, He loves me not.
+        ''')
+    input()
+    print('''
+        How many letters are in your crush's name?
+        Enter a number between 1-20.
+    ''')
 
-slowDown = ('''
-You slow down and drag you hand along the tops of the flowers and grass.
-You look up at the sky and see Helios, then look down back towards the trees.
-There are sun spots in your eyes, but you think you see someone in the woods.
-Should you confront her or run back to your friends?
-Type `confront her` or `run back`
-''')
+def slowDown():
+    print('''
+    You slow down and drag you hand along the tops of the flowers and grass.
+    You look up at the sky and see Helios, then look down back towards the trees.
+    There are sun spots in your eyes, but you think you see someone in the woods.
+    ''')
+    input()
+    print('''
+        Should you confront her or run back to your friends?
+        Type `confront her` or `run back`
+    ''')
 
-afterLovesMe = ('''
-What do you want to do now? Talk with your friends or go explore?
-Type `talk` or `explore`
-''')
+def afterLovesMe():
+    print('''
+        What do you want to do now? Talk with your friends or go explore?
+        Type `talk` or `explore`
+    ''')
 
-talkToFriends = ('''
-The girls exchange gossip. 
-    "Want to hear something funny?" one asks.
-The girls nod. 
-    "I was with Artemis the other day while she was bathing, 
-    and this creepy hunter was trying to watch. So she turned
-    him into a stag!"
-The girls laugh with laughter like tinkling bells.
-    "It turns out he had dogs, so that didn't end well for him."
-Tinkling bells again.
-    "Do you feel that?" another girl asks.
-Pretty soon you can all feel it--the ground is shaking.
-''')
+def talkToFriends():
+    print("The girls exchange gossip.")
+    input()
+    print('       "Want to hear something funny?" one asks.')
+    input()
+    print("The girls nod.")
+    input()
+    print(''' 
+        "I was with Artemis the other day while she was bathing, 
+        and this creepy hunter was trying to watch. So she turned
+        him into a stag!"
+    ''')
+    input()
+    print("The girls laugh with laughter like tinkling bells.")
+    input()
+    print('       "It turns out he had dogs, so that did not end well for him."')
+    input()
+    print("Tinkling bells again.")
+    input()
+    print('       "Do you feel that?" another girl asks. ')
+    input()
+    print("Pretty soon you can all feel it--the ground is shaking.")
 
-exploreTheField = ('''
-You see an iris away from the girls and walk toward it.
-This doesn't seem to be the right place for it, but sure enough it's there.
-You reach out and pick the iris. As soon as it's picked, the ground below
-you begins to shake violently.
-''')
+def exploreTheField(): 
+    print('''
+        You see an iris away from the girls and walk toward it.
+        This doesn't seem to be the right place for it, but sure enough it's there.
+    ''')
+    input()
+    print('''
+        You reach out and pick the iris. As soon as it's picked, the ground below
+        you begins to shake violently.
+    ''')
 
-confront = ('''
-You walk slowly and quietly towards the trees. You thought you saw a woman,
-right behind the big knotted tree, but you can't be sure.
-Silently you make your way toward the trees, not blinking, 
-but when you get to the tree and sneak around it, 
-there's no one there.
-You hear a cracking sound as the ground starts to shake and the tree roots break.
-''')
+def confront():
+    print('''
+        You walk slowly and quietly towards the trees. You thought you saw a woman,
+        right behind the big knotted tree, but you can't be sure.
+        ''')
+    input()
+    print(''' 
+        Silently you make your way toward the trees, not blinking, 
+        but when you get to the tree and sneak around it, 
+        there's no one there.
+    ''')
+    input()
+    print("You hear a cracking sound as the ground starts to shake and the tree roots break.")
 
-run = ('''
-You run back quickly to your friends.
-    "I think I saw something in the trees," you say.
-    "I'm sure it's nothing," says one girl.
-    "Besides, says another. Zeus is your father, so you have nothing to be afraid--"
-    But just then the ground starts to rumble.
-''')
+def run(): 
+    print("You run back quickly to your friends.")
+    input()
+    print('       "I think I saw something in the trees," you say.')
+    input()
+    print('       "It is probably nothing," says one girl lazily.')
+    input()
+    print('       "Besides," says another. "Zeus is your father, so you have nothing to be afraid--"')
+    input()
+    print("       But just then, the ground starts to rumble.")
 
-hadesArrives = ('''
-The ground shakes more and more violently. Your friends whimper and scream,
-trying to hide behind anything they can. A few begin to run, but it doesn't matter,
-because if the gods want them, they will find them.
-Eventually the center of the field breaks open, and a god emerges.
-The girls begin to cry.
-He calls your name across the field, but you can hear it like a close whisper.
+def hadesArrives(): 
+    print('''
+        The ground shakes more and more violently. Your friends whimper and scream,
+        trying to hide behind anything they can. A few begin to run, but it doesn't matter,
+        because if the gods want them, they will find them.
+        ''')
+    input()
+    print('''
+        Eventually the center of the field breaks open, and a god emerges.
+        The girls begin to cry.
+        ''')
+    input()
+    print("He calls your name across the field, but you can hear it like a close whisper.")
+    
+    name = "Persephone".upper()
+    name_list = list()
+    name_list[:0]=name
+    
+    for letter in name_list: 
+        print(letter),
+        time.sleep(1)
 
-P E R S E P H O N E
+    ## Looking into importing sys to print this horizontally instead of vertically.
 
-Do you approach him or run?
-Type `approach` or `run`
-''')
+    print('''
+        Do you approach him or run?
+        Type `approach` or `run`
+    ''')
 
-approachHades = ('''
-You walk toward Hades.
-"Hello, Persie," he says, and you two drop down to the Underworld.
-''')
+def approachHades(): 
+    print("You walk toward Hades.")
+    input()
+    print('       "Hello, Persie," he says, and you two drop down to the Underworld.')
 
-runFromHades = ('''
-You take off as fast as you can, but it doesn't matter.
-
-Hades doesn't even have to run after you.
-One moment, he's grabbed you by the arms, and then next you've both dropped
-down into the underworld.
-
-"You should have known better than that," he says. "No one can escape death."
-''')
+def runFromHades():
+    print("You take off as fast as you can, but it doesn't matter.")
+    input()
+    print("Hades doesn't even have to run after you.")
+    input()
+    print('''
+        One moment, he's grabbed you by the arms, and then next you've both dropped
+        down into the Underworld.
+        ''')
+    input()
+    print('       "You should have known better than that," he says. "No one can escape death."')
 
 gameOverAscii = ('''
 
@@ -144,36 +199,29 @@ gameOverAscii = ('''
 
 def main(): 
     print(banner)
-    time.sleep(1)
-    print(intro)
+    intro()
     move = input(">")
     if move == 'chase your friends':
-        print(chaseFriends)
+        chaseFriends()
         num = int(input(">"))
-        time.sleep(1)
         lovesMe(num)
-        time.sleep(1)
-        print(afterLovesMe)
+        afterLovesMe()
         move = input(">")
         if move == "talk":
-            time.sleep(1)
-            print(talkToFriends)
+            talkToFriends()
             hades()
         elif move == "explore":
-            time.sleep(1)
-            print(exploreTheField)
+            exploreTheField()
             hades()
 
     elif move == 'slow down':
-        print(slowDown)
+        slowDown()
         move = input(">")
         if move == "confront her":
-            time.sleep(1)
-            print(confront)
+            confront()
             hades()
         elif move == "run back":
-            time.sleep(1)
-            print(run)
+            run()
             hades()
 
 def lovesMe(num):
@@ -183,29 +231,29 @@ def lovesMe(num):
         print("He loves you!")
 
 def hades():
-    time.sleep(3)
+    input()
     print(".")
-    time.sleep(1)
+    input()
     print(".")
-    time.sleep(1)
+    input()
     print(".")
-    time.sleep(1)
-    print(hadesArrives)
+    input()
+    hadesArrives()
     move = input(">")
     if move == "approach":
-        print(approachHades)
+        approachHades()
     elif move == "run":
-        print(runFromHades)
+        runFromHades()
     gameOver()
 
 def gameOver():
-    time.sleep(3)
+    input()
     print(".")
-    time.sleep(1)
+    input()
     print(".")
-    time.sleep(1)
+    input()
     print(".")
-    time.sleep(1)
+    input()
     print(gameOverAscii)
 
 main()
