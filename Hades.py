@@ -3,7 +3,6 @@
 # Text Game by Amanda Murphy
 
 # To do: 
-## Add instructions
 ## Add input check
 
 
@@ -37,7 +36,25 @@ banner = ('''
                                                                                               
                                                                                               
 ''')
+
+def instructions():
+    print('''
+    Thanks for playing Welcome to Hades.
+    To view the INSTRUCTIONS, please enter `i`.
+    To continue without instructions, press any key.
+    ''')
+    resp = input(">")
+    if resp == "i":
+        print('''
+        Welcome to Hades is a story game. Press any key to continue
+        the story, and enter type your move when prompted.
+        Press any key to start the game.
+        ''')
+    input()
+
+
 def intro():
+    input()
     print('''
     You've finally escaped your mother and her long list of chores.
     You push through the trees, chasing after your friends,
@@ -198,6 +215,7 @@ gameOverAscii = ('''
 ''')
 
 def main(): 
+    instructions()
     print(banner)
     intro()
     move = input(">")
