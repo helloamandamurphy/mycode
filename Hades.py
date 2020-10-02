@@ -5,8 +5,9 @@
 # To do: 
 ## Add input check
 
-
 import time
+import sys
+
 banner = ('''
 
                          ___                                                ___               
@@ -34,7 +35,8 @@ banner = ('''
  | |  | |  ' `-'  | ' `-'  /  '  `-' /  ; '._,' '                                             
 (___)(___) `.__.'_.  `.__,'    `.__.'    '.___.'                                              
                                                                                               
-                                                                                              
+
+Text Game by Amanda Murphy                                                                                            
 ''')
 
 def instructions():
@@ -46,7 +48,7 @@ def instructions():
     resp = input(">")
     if resp == "i":
         print('''
-        Welcome to Hades is a story game. Press any key to continue
+        "Welcome to Hades" is a story game. Press any key to continue
         the story, and enter type your move when prompted.
         Press any key to start the game.
         ''')
@@ -167,20 +169,21 @@ def hadesArrives():
     input()
     print("He calls your name across the field, but you can hear it like a close whisper.")
     
-    name = "Persephone".upper()
-    name_list = list()
-    name_list[:0]=name
-    
-    for letter in name_list: 
-        print(letter),
-        time.sleep(1)
-
-    ## Looking into importing sys to print this horizontally instead of vertically.
+    printName()
 
     print('''
         Do you approach him or run?
         Type `approach` or `run`
     ''')
+
+def printName():
+    name = "Persephone".upper()
+    name_list = list()
+    name_list[:0]=name
+    
+    for letter in name_list:
+        print(letter, end=' ', flush=True) 
+        time.sleep(.75)
 
 def approachHades(): 
     print("You walk toward Hades.")
@@ -213,6 +216,20 @@ gameOverAscii = ('''
                                                                                                               
 
 ''')
+
+# def validInput(input):
+#     if input in turns.keys():
+#         return turns[input]
+#     else: print("Sorry, I don't understand. Try again.")
+
+# turns = {
+#         {"chase your friends": chaseFriends()},
+#         "talk": talkToFriends(),
+#         "explore": exploreTheField(), 
+#         "slow down": slowDown(), 
+#         "confront her": confront(),
+#         "run back": run()
+#         }
 
 def main(): 
     instructions()
@@ -276,7 +293,24 @@ def gameOver():
 
 main()
 
-# Hey Chad, I think the logic side of this could be improved--
-# the writer half of me was being a little bossy regarding the string output.
-# I wanted to drop into another room (with items, etc.) after this, 
-# but it took a little longer than I had hoped.
+# Hey Chad, I worked on a few things this week:
+
+# I messed around with an API from one of the labs (on Monday, I think)
+# because I thought I needed more practice with that.
+
+# I added a lot more time.sleep()'s in the code to get the text to print out
+# slower--this involved changing my variables that contained the text to print
+# into functions, but I ultimately was unhappy with it, so I switched those to
+# `input()` so the player can move at their own pace.
+
+# Next I was trying to get Persephone's name to spell out one letter at a time
+# horizontally (I tried a couple things that printed each letter on a new line)
+# I tried importing sys, as per some Stack Overflow, but found out the solution
+# was simpler.
+
+# I started working on input validation, but wasn't able to get it to work.
+# I wanted to use a switch case that would execute a function if the input matched,
+# and found that Python uses dictionaries for this. When I implemented it,
+# it would print out one string just fine, but it ended up executing all of the functions
+# in the dictionary rather than just one that matched the input. So I just commented
+# my code out for the moment, and reverted everything else back to its working state.
